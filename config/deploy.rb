@@ -2,18 +2,18 @@ set :application, "captest"
 set :repository,  "git@github.com:bklein/captest.git"
 
 set :scm, :git
+
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 server "captest.slammervanity.com", :web, :app, :db, primary: true
 
 set :user, "bklein"
-set :deploy_to, "/home/#{user}/www/#{application}"
+set :deploy_to, "/www3/#{application}"
 set :deploy_via, :remote_cache
-
 set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-
+set :use_sudo, false
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
