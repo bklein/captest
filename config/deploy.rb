@@ -6,7 +6,7 @@ set :scm, :git
 server "captest.slammervanity.com", :web, :app, :db, primary: true
 
 set :user, "bklein"
-set :deploy_to "/home/#{user}/www/#{application}"
+set :deploy_to, "/home/#{user}/www/#{application}"
 set :deploy_via, :remote_cache
 
 set :branch, "master"
