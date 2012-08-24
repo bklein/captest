@@ -29,7 +29,7 @@ ssh_options[:forward_agent] = true
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
   
-  task :setup_config, roles :app do
+  task :setup_config, roles: :app do
     run "mkdir -p #{shared_path}/config"
     puts File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Edit the files in #{shared_path}"
